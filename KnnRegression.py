@@ -21,6 +21,8 @@ knn = KNeighborsRegressor(n_neighbors=sv.best_params_['n_neighbors'], weights=sv
 knn.fit(X_train, y_train)
 mse = mean_squared_error(y_test, knn.predict(X_test))
 
+print("Доля ошибок: ", int(mse), '%')
+
 # metrics = []
 #
 # for n in range(2, 6):
@@ -32,19 +34,3 @@ mse = mean_squared_error(y_test, knn.predict(X_test))
 # plt.ylabel(ylabel='Доля ошибок')
 # plt.xlabel(xlabel='Кол-во соседей')
 # plt.show()
-
-print("Доля ошибок: ", int(mse), '%')
-
-# **Pandas**
-
-# data.drop("G3", axis=1)
-# data.isnull()
-# data.isnull().any() - поиск пропусков
-# data.info() - детальная информация
-# data.describe() - статистика числовых переменных
-# data.shape - размер таблицы (строки, колонки)
-# data.columns - вывод колонок
-# data.unique() - значения признака
-# data.value_counts() - кол-во значений признака
-# data.hist() - диаграмма
-# data.mean() - среднее
